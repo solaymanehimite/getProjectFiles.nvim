@@ -55,7 +55,7 @@ local function get_project_files(root_dir, extensions, exclude_dirs)
                     if include_file then
                         local content, err = read_file_content(full_path)
                         if content then
-                            table.insert(files_content, entry .. ": " .. content)
+                            table.insert(files_content, full_path .. ": `" .. content .. "`")
                         else
                             print("Error reading " .. full_path .. ": " .. err)
                         end
