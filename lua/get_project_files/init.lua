@@ -14,7 +14,8 @@ local function get_project_files(root_dir, extensions, exclude_dirs)
     local files_content = {}
 
     local function is_excluded_dir(dir)
-        local default_excluded_dirs = { "node_modules", ".git" } -- Add default excluded directories
+        -- Add default excluded directories
+        local default_excluded_dirs = { "node_modules", ".git", "target", "public", ".vscode", ".next" }
         local all_excluded_dirs = vim.list_extend(exclude_dirs or {}, default_excluded_dirs)
 
         if all_excluded_dirs then
